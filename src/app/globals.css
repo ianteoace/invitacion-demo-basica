@@ -1,0 +1,84 @@
+﻿@import "tailwindcss";
+
+:root {
+  --background: #fff8ec;
+  --foreground: #3a2e39;
+  --color-cream: #fff8ec;
+  --color-panel: rgba(255, 253, 248, 0.72);
+  --color-panel-soft: rgba(255, 255, 255, 0.78);
+  --color-ink: #3a2e39;
+  --color-accent-blue: #a7d8f0;
+  --color-accent-lilac: #cdb4db;
+  --color-accent-yellow: #ffe8a3;
+  --color-accent-pink: #ffc8dd;
+  --color-accent-mint: #b8ebd0;
+  --color-accent-strong: #7965aa;
+  --color-white-warm: #fffdf8;
+  --shadow-soft: 0 20px 60px rgba(58, 46, 57, 0.08);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif-display: var(--font-melodrama);
+  --font-verse: var(--font-recia-regular);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background:
+    radial-gradient(circle at 14% 12%, rgba(167, 216, 240, 0.3), transparent 25%),
+    radial-gradient(circle at 86% 14%, rgba(255, 200, 221, 0.26), transparent 20%),
+    radial-gradient(circle at 50% 55%, rgba(255, 232, 163, 0.18), transparent 28%),
+    radial-gradient(circle at 12% 84%, rgba(184, 235, 208, 0.2), transparent 18%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0)),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(167, 216, 240, 0.44);
+  color: var(--color-ink);
+}
+
+.glass-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 248, 241, 0.42)),
+    var(--color-panel);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.premium-grid {
+  background-image:
+    linear-gradient(rgba(121, 101, 170, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(121, 101, 170, 0.018) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.9s ease-out both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
